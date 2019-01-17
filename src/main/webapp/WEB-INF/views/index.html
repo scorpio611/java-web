@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <body>
-<h3>Customers</h3>
+<h3>Products</h3>
 <p>
     <a th:href="@{/product/create}">
-        Add new customer
+        Add new product
     </a>
 </p>
 <div class="notify">
@@ -17,8 +17,9 @@
     <thead>
     <tr>
         <th>Name</th>
-        <th>Email</th>
-        <th>Address</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Producer</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
@@ -27,8 +28,9 @@
     <tbody>
     <tr th:each="row,rowStat : ${products}">
         <td th:text="${row.getName()}"></td>
-        <td th:text="${row.getEmail()}"></td>
-        <td th:text="${row.getAddress()}"></td>
+        <td th:text="${row.getPrice()}"></td>
+        <td th:text="${row.getDescription()}"></td>
+        <td th:text="${row.getProducer()}"></td>
         <td><a th:href="@{/customer/{id}/edit(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/customer/{id}/delete(id=${row.getId()})}">delete</a></td>
         <td><a th:href="@{/customer/{id}/view(id=${row.getId()})}">view</a></td>

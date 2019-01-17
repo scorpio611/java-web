@@ -2,24 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <body>
-<h3>View Customer</h3>
+<h3>View Product</h3>
 <p>
     <a th:href="@{/}">
-        Back to customer list
+        Back to product list
     </a>
 </p>
 <div id="detail">
-    <div class="cusdetail">
+    <div class="productdetail">
         <label>Name:</label>
         <label th:text="${customer.getName()}"></label>
     </div>
-    <div class="cusdetail">
-        <label>Email:</label>
-        <label th:text="${customer.getEmail()}"></label>
+    <div class="productdetail">
+        <label>Price:</label>
+        <label th:text="${customer.getPrice()}"></label>
     </div>
-    <div class="cusdetail">
-        <label>Address:</label>
-        <label th:text="${customer.getAddress()}"></label>
+    <div class="productdetail">
+        <label>Description:</label>
+        <label th:text="${customer.getDescription()}"></label>
+    </div>
+    <div class="productdetail">
+        <label>Producer:</label>
+        <label th:text="${customer.getProducer()}"></label>
     </div>
 </div>
 <footer th:replace="layout :: footer"></footer>
